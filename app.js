@@ -121,7 +121,6 @@ app.get("/states/:stateId/", authenticateToken, async (request, response) => {
         state_id = ${stateId};`;
   const state = await database.get(getStateQuery);
   response.send(convertStateDbObjectToResponseObject(state))
-);
 });
 
 app.get("/districts/:districtId/", authenticateToken, async (request, response) => {
@@ -135,7 +134,6 @@ app.get("/districts/:districtId/", authenticateToken, async (request, response) 
         district_id = ${districtId};`;
   const district = await database.get(getDistrictsQuery);
   response.send(convertDistrictDbObjectToResponseObject(district))
-);
 });
 
 app.post("/districts/", authenticateToken, async (request, response) => {
